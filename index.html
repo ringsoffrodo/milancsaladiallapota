@@ -1,1 +1,39 @@
-NEM!
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Milan csaladi allapota!</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://hilios.github.io/jQuery.countdown/css/syntax.css">
+  <link rel="stylesheet" href="http://hilios.github.io/jQuery.countdown/css/main.css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/hilios/jQuery.countdown/2.2.0/dist/jquery.countdown.min.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+ <main>
+  <div class="d-flex justify-content-center align-items-center" >
+  <div id="engageClock"></div>
+<script type="text/javascript">
+  var engageTime = new Date(2019,2,23,19);
+  engageTime.setHours(engageTime.getHours()+36);
+$('#engageClock').countdown(engageTime, {elapse: true})
+.on('update.countdown', function(event) {
+  var $this = $(this);
+  if (event.elapsed) {
+    $this.html(event.strftime('<div class="text-center display-1" >Gratulálunk, leendő feleség!</div><div class="text-center display-1"><span>%Y év %m hó %d nap %H:%M:%S</span></div>'));
+  } else {
+    $this.html(event.strftime('<div class="text-center display-1">Leendő feleség ? (Még nem biztos....)</div><div class="text-center display-1"><span >%Y év %m hó %d nap %H:%M:%S</span></div>'));
+  }
+});
+</script>
+</div>
+</main>
+</body>
+</html>
